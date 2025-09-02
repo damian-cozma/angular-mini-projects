@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# production
+dist/
+
+# Angular stuff
+.angular/
+.angular/cache/
+
+# misc
+*.log
+*.tmp
+
+# IDE settings
+.vscode/
+.idea/
+.DS_Store
