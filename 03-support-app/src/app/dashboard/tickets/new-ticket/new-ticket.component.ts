@@ -20,6 +20,9 @@ export class NewTicketComponent implements OnInit, AfterViewInit {
   private form =
     viewChild.required<ElementRef<HTMLFormElement>>('form');
 
+  enteredTitle = '';
+  enteredText = '';
+
   add = output<{title: string, text: string}>();
 
   ngOnInit() {
@@ -32,9 +35,10 @@ export class NewTicketComponent implements OnInit, AfterViewInit {
     console.log(this.form);
   }
 
-  onSubmit(title: string, ticketText: string) {
-    this.add.emit({title: title, text: ticketText});
-    this.form().nativeElement.reset();
+  onSubmit() {
+    this.add.emit({title: this.enteredTitle, text: this.enteredTitle});
+    this.enteredTitle = '';
+    this.enteredText = '';
   }
 
 }
